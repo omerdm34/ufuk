@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T10:25:00+03:00",
+  "title": "Design System: Ufuk",
+  "extensions": {
+    "colorMeta": {
+      "lacquer-1": { "role": "neutral", "displayName": "Siyah lake", "canonical": "#14171B", "tonalRamp": ["#0E1013", "#14171B", "#1A1E23", "#21262C", "#2A3037", "#454C55", "#A9A396", "#ECE7DB"] },
+      "silver-0": { "role": "neutral", "displayName": "Gümüş kadran", "canonical": "#E6E9EB", "tonalRamp": ["#15181B", "#545B62", "#AEB5BB", "#D2D7DB", "#DEE2E5", "#E6E9EB", "#E9ECEE", "#F3F5F6"] },
+      "gilt-on-dark": { "role": "primary", "displayName": "Yaldız", "canonical": "#C9A45C", "tonalRamp": ["#3A2C10", "#5C471B", "#8A6A24", "#A9853A", "#C9A45C", "#D8BC85", "#E7D5AE", "#F4EBD8"] },
+      "steel-on-light": { "role": "secondary", "displayName": "Mavi çelik", "canonical": "#2F5E96", "tonalRamp": ["#0F2138", "#1A3659", "#2F5E96", "#4A77AD", "#6690C2", "#86ABD9", "#B0CAEA", "#DCE7F6"] },
+      "vermilion-on-light": { "role": "tertiary", "displayName": "Vermilyon (canlı okuma)", "canonical": "#B8321F", "tonalRamp": ["#3B0E08", "#6B1B10", "#B8321F", "#CD4630", "#E2583F", "#EC8672", "#F4B5A8", "#FBE2DC"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Kadran okuması", "purpose": "Yalnızca tahmin kadranındaki şimdiki sıcaklık." },
+      "display-small": { "displayName": "Satır sıcaklığı", "purpose": "Liste satırlarında en büyük öğe." },
+      "label": { "displayName": "Kazıma etiket", "purpose": "Bölüm başlıkları, alet adları, saatler; büyük harf, geniş aralık." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "needle-settle", "value": "spring(dampingRatio = 0.42, stiffness = 55)", "purpose": "Kadran ibresinin açılışta yerine oturması; animasyonlar kapalıysa atlanır." },
+      { "name": "loading-sweep", "value": "tween(1400ms, linear), reverse", "purpose": "Yükleniyor göstergesinde ölçeği tarayan ibre." }
+    ],
+    "breakpoints": [
+      { "name": "expanded", "value": "600dp", "purpose": "Alt çubuk yerine yan ray; içerik en fazla 720dp." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Temperature Dial",
+      "kind": "custom",
+      "description": "270° ölçek, yaldız günlük aralık, pirinç ayar ibresi (dün bu saat), vermilyon canlı ibre, alt boşlukta dijital okuma.",
+      "html": "<div class=\"ds-dial\"><svg viewBox=\"0 0 200 200\" width=\"200\" height=\"200\"><circle cx=\"100\" cy=\"100\" r=\"96\" fill=\"#F3F5F6\" stroke=\"#D2D7DB\" stroke-width=\"1.5\"/><path d=\"M39.9 160.1A85 85 0 1 1 160.1 160.1\" fill=\"none\" stroke=\"#AEB5BB\" stroke-width=\"1\" stroke-dasharray=\"1 5\"/><path d=\"M45 100A55 55 0 0 1 131 55\" fill=\"none\" stroke=\"#8A6A24\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"100\" y1=\"100\" x2=\"78\" y2=\"30\" stroke=\"#8A6A24\" stroke-width=\"1.2\"/><polygon points=\"96,22 98,100 102,100\" fill=\"#B8321F\"/><circle cx=\"100\" cy=\"100\" r=\"5\" fill=\"#B8321F\"/><text x=\"100\" y=\"150\" text-anchor=\"middle\" font-family=\"Barlow Condensed, sans-serif\" font-weight=\"300\" font-size=\"44\" fill=\"#15181B\">17°</text></svg></div>",
+      "css": ".ds-dial { display: inline-block; background: #E6E9EB; padding: 8px; }"
+    },
+    {
+      "name": "Place Row",
+      "kind": "card",
+      "refersTo": "place-row",
+      "description": "Kutusuz satır: ad ve durum solda, en büyük öğe sıcaklık sağda, altında bugünün aralık çubuğu.",
+      "html": "<div class=\"ds-row\"><div><div class=\"ds-row-name\">Ankara</div><div class=\"ds-row-detail\">Kapalı · yerel saat 10:00</div></div><div class=\"ds-row-temp\">17°<span class=\"ds-row-bar\"><i></i></span><small>22° / 13°</small></div></div>",
+      "css": ".ds-row { display: flex; justify-content: space-between; align-items: center; min-height: 76px; padding: 10px 16px; background: #E6E9EB; border-bottom: 1px solid #DEE2E5; font-family: Roboto, sans-serif; color: #15181B; } .ds-row:hover { background: #E9ECEE; } .ds-row:focus-visible { outline: 2px solid #8A6A24; } .ds-row-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 24px; } .ds-row-detail { font-size: 12px; color: #545B62; } .ds-row-temp { display: flex; flex-direction: column; align-items: flex-end; font-family: 'Barlow Condensed', sans-serif; font-weight: 300; font-size: 40px; line-height: 1; } .ds-row-temp small { font-size: 13px; letter-spacing: .1em; color: #545B62; font-weight: 500; } .ds-row-bar { position: relative; width: 56px; height: 3px; background: #8A6A24; border-radius: 2px; margin: 6px 0; } .ds-row-bar i { position: absolute; left: 45%; top: -2px; width: 7px; height: 7px; border-radius: 50%; background: #B8321F; }"
+    },
+    {
+      "name": "Tonal Button",
+      "kind": "button",
+      "refersTo": "button-tonal",
+      "description": "Ekranın tek birincil eylemi (ör. Konumumu kullan).",
+      "html": "<button class=\"ds-btn-tonal\">Konumumu kullan</button>",
+      "css": ".ds-btn-tonal { background: #DEE2E5; color: #15181B; border: none; border-radius: 20px; height: 40px; padding: 0 24px; font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: .04em; } .ds-btn-tonal:hover { background: #D2D7DB; } .ds-btn-tonal:focus-visible { outline: 2px solid #8A6A24; outline-offset: 2px; }"
+    },
+    {
+      "name": "Sort Chip",
+      "kind": "chip",
+      "refersTo": "chip-filter-selected",
+      "description": "Keşfet sıralaması; seçili olan dolu.",
+      "html": "<span class=\"ds-chip ds-chip-on\">A–Z</span><span class=\"ds-chip\">En sıcak</span>",
+      "css": ".ds-chip { display: inline-block; height: 32px; line-height: 30px; padding: 0 14px; margin-right: 8px; border: 1px solid #AEB5BB; border-radius: 6px; font-family: 'Barlow Condensed', sans-serif; font-weight: 500; font-size: 16px; color: #545B62; } .ds-chip-on { background: #DEE2E5; border-color: #DEE2E5; color: #15181B; } .ds-chip:hover { background: #E9ECEE; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Şehir arama; 400 ms bekletmeli.",
+      "html": "<label class=\"ds-search\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\"><path fill=\"#545B62\" d=\"M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z\"/></svg><input placeholder=\"Şehir ara (ör. Rize, Berlin)\"></label>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 16px; border: 1px solid #AEB5BB; border-radius: 10px; background: #E6E9EB; } .ds-search:focus-within { border: 2px solid #8A6A24; } .ds-search input { border: none; background: transparent; font: 16px Roboto, sans-serif; color: #15181B; flex: 1; outline: none; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "navigation-bar",
+      "description": "Üç hedef; 600dp üstünde yan ray olur.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-on\">Yerlerim</a><a>Keşfet</a><a>Ayarlar</a></nav>",
+      "css": ".ds-nav { display: flex; justify-content: space-around; height: 80px; align-items: center; background: #E9ECEE; font-family: 'Barlow Condensed', sans-serif; font-weight: 500; letter-spacing: .06em; } .ds-nav a { color: #545B62; padding: 4px 20px; border-radius: 16px; } .ds-nav a:hover { color: #15181B; } .ds-nav .ds-nav-on { color: #15181B; background: #DEE2E5; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Masa üstü hava istasyonu",
+    "overview": "Ufuk, evlerde duvara asılan pirinç barometre, termometre ve nemölçer takımının ekrandaki karşılığıdır. Her yer bir alet kadranıyla okunur: ölçeğin üzerinde canlı ibre şu anki değeri, ince pirinç ayar ibresi dün aynı saatteki değeri gösterir, yaldız yay günün aralığını işaretler. Değişim, sayı okunmadan görülür; kadranın altındaki kısa cümleler ne yapılacağını söyler.",
+    "keyCharacteristics": [
+      "Yuvarlak olan yalnızca kadranlardır; geri kalan her şey düz çizgi ve düz yüzeydir.",
+      "Tek sıcak renk (vermilyon) yalnızca canlı okumaya aittir.",
+      "Rakamlar dar ve ince (Barlow Condensed Light), tablo gibi hizalı.",
+      "Etiketler alet üzerine kazınmış gibi: küçük, dar, geniş aralıklı, büyük harf.",
+      "Bayat veri soluklaşır ve yaşını söyler."
+    ],
+    "rules": [
+      { "name": "The Live Reading Rule", "body": "Vermilyon yalnızca \"şu an\" ölçülen değeri gösteren öğeye verilir; başlık, düğme, bildirim ya da süs için kullanılmaz.", "section": "colors" },
+      { "name": "The No Cream Rule", "body": "Açık tema soğuk gümüştür (#E6E9EB); sıcak krem ya da kâğıt tonu kullanılmaz.", "section": "colors" },
+      { "name": "The Stale Dims Rule", "body": "Önbellekten gelen eski veride canlı ibre %40 opaklığa iner ve tazelik notu içi boş halka ile hata rengine döner. Renk tek başına anlam taşımaz; yaş her zaman yazıyla da söylenir.", "section": "colors" },
+      { "name": "The Small Degree Rule", "body": "Derece işareti (°) Barlow'da değil sistem yazısında çizilir (degreesText); iri Barlow halkası rakamdan kopuk durur.", "section": "typography" },
+      { "name": "The Tabular Rule", "body": "Tüm rakamlar tnum ile yazılır; alt alta gelen sıcaklıklar ve saatler kaymaz.", "section": "typography" },
+      { "name": "The Flat Instrument Rule", "body": "Kabartma, iç gölge, parlama ya da metal dokusu taklit edilmez; alet çizgi ve ton ile anlatılır.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do her yeni ölçümü kendi kadranına ya da ölçeğine koy: ibre şimdiki değer, varsa pirinç ibre önceki okuma.",
+      "Do eski veriyi yaşıyla göster (\"Güncellenemedi · 25 dk önceki veri\") ve canlı ibreyi soluklaştır.",
+      "Do sıcaklıkları degreesText ile yaz ve rakamlarda tnum kullan.",
+      "Do etiketleri EngravedLabel ile yaz; büyük harfe cihaz diliyle çevrilir (\"İNDEKSİ\").",
+      "Do her satırı ve aleti TalkBack için tek cümle yap (clearAndSetSemantics)."
+    ],
+    "donts": [
+      "Don't gökyüzü degradesi, buzlu cam kart ya da hava durumuna göre renk değiştiren zemin kullanma.",
+      "Don't vermilyonu canlı okuma dışında bir şeye verme.",
+      "Don't emoji ya da ikon fontu kullanma; hava ikonları WeatherGlyph ile çizilir.",
+      "Don't Material You dinamik rengini açma; duvar kâğıdı rengi tek vurgu kuralını bozar.",
+      "Don't listeleri kartlara koyma; hiyerarşiyi yazı boyutu ve ayırıcılar kurar."
+    ]
+  }
+}
