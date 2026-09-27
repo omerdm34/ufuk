@@ -33,6 +33,7 @@ import com.kampplus.ufuk.R
 import com.kampplus.ufuk.core.ui.component.EngravedLabel
 import com.kampplus.ufuk.core.ui.component.GlyphKind
 import com.kampplus.ufuk.core.ui.component.WeatherGlyph
+import com.kampplus.ufuk.core.ui.component.degreesText
 import com.kampplus.ufuk.core.ui.component.dial.DialArc
 import com.kampplus.ufuk.core.ui.component.dial.dialAngle
 import com.kampplus.ufuk.core.ui.component.dial.drawArcBand
@@ -168,21 +169,22 @@ private fun FaceReadout(
     compact: Boolean,
     faceSide: Dp
 ) {
+    // Okuma, kadranın ibre süpürmeyen alt boşluğuna yazılır; ibre hangi değerde olursa olsun üstünden geçmez.
     val color = if (isStale) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-        modifier = Modifier.offset(y = -faceSide * 0.24f)
+        modifier = Modifier.offset(y = faceSide * 0.21f)
     ) {
-        WeatherGlyph(kind = glyph, isDay = isDay, size = 28.dp, colors = glyphColors(background = LocalInstrumentColors.current.face))
-        EngravedLabel(text = condition, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(
+            text = degreesText(nowText),
+            style = if (compact) MaterialTheme.typography.displayMedium else MaterialTheme.typography.displayLarge,
+            color = color
+        )
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            WeatherGlyph(kind = glyph, isDay = isDay, size = 22.dp, colors = glyphColors(background = LocalInstrumentColors.current.face))
+            EngravedLabel(text = condition, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
     }
-    Text(
-        text = nowText,
-        style = if (compact) MaterialTheme.typography.displayMedium else MaterialTheme.typography.displayLarge,
-        color = color,
-        modifier = Modifier.offset(y = faceSide * 0.25f)
-    )
 }
 
 /** Kadranın altındaki açıklama: hangi ibre neyi gösteriyor. */

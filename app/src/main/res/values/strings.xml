@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ufuk</string>
+    <string name="app_name" translatable="false">Ufuk</string>
 
     <!-- Genel durumlar -->
     <string name="state_loading">Ölçülüyor</string>
@@ -16,13 +16,14 @@
     <string name="error_server">Hava servisi şu an yanıt vermiyor (HTTP %1$d). Biraz sonra tekrar dene.</string>
     <string name="error_location_unavailable">Konumun bulunamadı. Konum servisinin açık olduğundan emin ol ya da açık alanda tekrar dene.</string>
     <string name="error_location_permission">Konum izni verilmedi. İstersen şehir arayarak devam edebilirsin.</string>
+
     <!-- Birimler -->
-    <string name="unit_celsius">°C</string>
-    <string name="unit_fahrenheit">°F</string>
-    <string name="unit_kmh">km/sa</string>
-    <string name="unit_ms">m/sn</string>
-    <string name="unit_mph">mph</string>
-    <string name="format_value_unit">%1$d %2$s</string>
+    <string name="unit_celsius" translatable="false">°C</string>
+    <string name="unit_fahrenheit" translatable="false">°F</string>
+    <string name="unit_kmh">km⁠/⁠sa</string>
+    <string name="unit_ms">m⁠/⁠sn</string>
+    <string name="unit_mph" translatable="false">mph</string>
+    <string name="format_value_unit" translatable="false">%1$d %2$s</string>
 
     <!-- Ayarlar -->
     <string name="settings_title">Ayarlar</string>
@@ -35,6 +36,7 @@
     <string name="settings_font">Yazı tipi: Barlow Condensed</string>
     <string name="settings_font_detail">Jeremy Tribby, SIL Open Font License 1.1</string>
     <string name="settings_version">Sürüm %1$s · Kamp+ Turkcell Akademi</string>
+
     <!-- Hava koşulları -->
     <string name="condition_clear">Açık</string>
     <string name="condition_mainly_clear">Az bulutlu</string>
@@ -105,7 +107,7 @@
     <string name="instrument_humidity">Nem</string>
     <string name="humidity_note">Çiy noktası %1$s</string>
     <string name="instrument_pressure">Basınç</string>
-    <string name="pressure_value">%1$d hPa</string>
+    <string name="pressure_value" translatable="false">%1$d hPa</string>
     <string name="pressure_rising">Son 3 saatte yükseliyor</string>
     <string name="pressure_steady">Son 3 saatte sabit</string>
     <string name="pressure_falling">Son 3 saatte düşüyor</string>
@@ -152,4 +154,41 @@
     <string name="a11y_day_precipitation">%1$s: %2$s, en düşük %3$s, en yüksek %4$s, yağış olasılığı %5$s.</string>
     <string name="a11y_hour">%1$s: %2$s</string>
     <string name="a11y_hour_precipitation">%1$s: %2$s, yağış %3$s</string>
+    <string name="a11y_row">%1$s, %2$s, %3$s</string>
+    <string name="a11y_row_range">%1$s, %2$s, %3$s. Bugün en yüksek ve en düşük: %4$s</string>
+    <string name="a11y_row_no_data">%1$s, hava verisi yok</string>
+
+    <!-- Gezinme -->
+    <string name="nav_my_places">Yerlerim</string>
+    <string name="nav_explore">Keşfet</string>
+    <string name="nav_settings">Ayarlar</string>
+
+    <!-- Yerlerim -->
+    <string name="my_places_title">Yerlerim</string>
+    <string name="location_prompt_title">Bulunduğun yerin havası</string>
+    <string name="location_prompt_message">Konumun yalnızca tahmin almak için kullanılır ve yalnızca bu cihazda saklanır.</string>
+    <string name="action_use_location">Konumumu kullan</string>
+    <string name="action_update_location">Konumu güncelle</string>
+    <string name="locating">Konum bulunuyor…</string>
+    <string name="my_places_empty_title">Henüz kayıtlı yerin yok</string>
+    <string name="my_places_empty_message">Keşfet’te bir şehrin yanındaki yıldıza dokun; her sabah ilk bakacağın yer burası olsun.</string>
+    <string name="action_go_explore">Keşfet’e git</string>
+    <string name="place_removed">%1$s yerlerinden çıkarıldı</string>
+    <string name="action_undo">Geri al</string>
+    <string name="notice_offline_rows">Çevrimdışı · son bilinen değerler gösteriliyor</string>
+    <string name="row_detail">%1$s · yerel saat %2$s</string>
+    <string name="row_no_data">Hava verisi alınamadı</string>
+    <string name="row_range" translatable="false">%1$s / %2$s</string>
+
+    <!-- Keşfet -->
+    <string name="explore_title">Keşfet</string>
+    <string name="search_hint">Şehir ara (ör. Rize, Berlin)</string>
+    <string name="action_clear">Temizle</string>
+    <string name="explore_now_title">Türkiye şu an</string>
+    <string name="explore_extremes">En sıcak %1$s %2$s · En serin %3$s %4$s</string>
+    <string name="sort_alphabetical" translatable="false">A–Z</string>
+    <string name="sort_warmest">En sıcak</string>
+    <string name="sort_coldest">En serin</string>
+    <string name="search_empty_title">Yer bulunamadı</string>
+    <string name="search_empty_message">“%1$s” için bir yerleşim yeri bulunamadı. Yazımı kontrol et ya da yakındaki büyük bir yeri dene.</string>
 </resources>

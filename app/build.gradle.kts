@@ -62,6 +62,10 @@ android {
         compose = true
         buildConfig = true
     }
+    sourceSets {
+        // MigrationTestHelper eski şemaları buradan okur.
+        getByName("androidTest").assets.srcDir("$projectDir/schemas")
+    }
     androidResources {
         // Uygulama Türkçe ve İngilizce yayımlanır; kütüphanelerin diğer dilleri APK'ya girmez.
         localeFilters += listOf("tr", "en")

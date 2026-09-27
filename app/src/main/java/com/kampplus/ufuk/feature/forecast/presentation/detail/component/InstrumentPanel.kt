@@ -28,6 +28,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.kampplus.ufuk.R
 import com.kampplus.ufuk.core.ui.component.EngravedLabel
+import com.kampplus.ufuk.core.ui.component.dial.DialArc
 import com.kampplus.ufuk.core.ui.component.dial.dialAngle
 import com.kampplus.ufuk.core.ui.component.dial.drawNeedle
 import com.kampplus.ufuk.core.ui.component.dial.drawSetHand
@@ -39,6 +40,7 @@ import com.kampplus.ufuk.core.ui.theme.LocalInstrumentColors
 import com.kampplus.ufuk.feature.forecast.presentation.model.GaugeUi
 import com.kampplus.ufuk.feature.forecast.presentation.model.InstrumentsUi
 import com.kampplus.ufuk.feature.forecast.presentation.model.SunUi
+import kotlin.math.roundToInt
 
 /**
  * Masa üstü hava istasyonunun alet takımı: her ölçüm kendi kadranında. Kutular yok; aletler
@@ -103,8 +105,16 @@ private fun InstrumentTile(label: UiText, value: UiText, note: UiText?, modifier
 @Composable
 private fun ArcFace(gauge: GaugeUi) {
     val instruments = LocalInstrumentColors.current
+    val textMeasurer = rememberTextMeasurer()
+    val endStyle = MaterialTheme.typography.labelSmall.copy(color = instruments.engraving)
     Canvas(modifier = Modifier.size(FACE)) {
         val radius = face(instruments)
+        // Ölçeğin iki ucu, kadranın alttaki boşluğuna kazınır.
+        listOf(gauge.scaleMin to DialArc.START, gauge.scaleMax to DialArc.START + DialArc.SWEEP).forEach { (value, angle) ->
+            val layout = textMeasurer.measure(value.roundToInt().toString(), endStyle)
+            val position = pointOnCircle(center, radius * 0.5f, angle)
+            drawText(layout, topLeft = position - Offset(layout.size.width / 2f, layout.size.height / 2f))
+        }
         drawTicks(
             center = center,
             radius = radius - 5.dp.toPx(),

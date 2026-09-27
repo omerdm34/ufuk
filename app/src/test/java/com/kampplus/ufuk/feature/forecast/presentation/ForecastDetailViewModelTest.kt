@@ -16,8 +16,11 @@ import com.kampplus.ufuk.feature.forecast.domain.usecase.ObserveForecastUseCase
 import com.kampplus.ufuk.feature.forecast.domain.usecase.RefreshForecastUseCase
 import com.kampplus.ufuk.feature.forecast.presentation.detail.ForecastDetailUiState
 import com.kampplus.ufuk.feature.forecast.presentation.detail.ForecastDetailViewModel
+import com.kampplus.ufuk.feature.places.domain.usecase.ObserveSavedPlaceIdsUseCase
+import com.kampplus.ufuk.feature.places.domain.usecase.ToggleSavedPlaceUseCase
 import com.kampplus.ufuk.feature.settings.domain.usecase.ObserveUnitSettingsUseCase
 import com.kampplus.ufuk.testing.FakeForecastRepository
+import com.kampplus.ufuk.testing.FakeSavedPlaceRepository
 import com.kampplus.ufuk.testing.FakeSettingsRepository
 import com.kampplus.ufuk.testing.MainDispatcherRule
 import com.kampplus.ufuk.testing.ankara
@@ -42,6 +45,7 @@ class ForecastDetailViewModelTest {
     private var now = fetchedAt.plusSeconds(3 * 60)
     private val repository = FakeForecastRepository(fetchedAt = fetchedAt)
     private val settings = FakeSettingsRepository()
+    private val saved = FakeSavedPlaceRepository()
 
     private fun createViewModel() = ForecastDetailViewModel(
         savedStateHandle = SavedStateHandle(
@@ -59,6 +63,8 @@ class ForecastDetailViewModelTest {
         observeUnitSettings = ObserveUnitSettingsUseCase(settings),
         freshnessPolicy = FreshnessPolicy(),
         uiMapper = testForecastUiMapper(),
+        observeSavedPlaceIds = ObserveSavedPlaceIdsUseCase(saved),
+        toggleSavedPlace = ToggleSavedPlaceUseCase(saved),
         clock = Clock.fixed(now, ZoneOffset.UTC),
         ticker = Ticker { flowOf(now) }
     )
@@ -136,4 +142,17 @@ class ForecastDetailViewModelTest {
     }
 
     private fun successModel(state: ForecastDetailUiState) = (state.content as UiState.Success).data
+
+    @Test
+    fun `the star saves the place shown on the screen`() = runTest {
+        repository.seed(ankara)
+        val viewModel = createViewModel()
+
+        viewModel.uiState.test {
+            assertEquals(false, expectMostRecentItemAfterIdle().isSaved)
+            viewModel.onToggleSaved()
+            assertEquals(true, expectMostRecentItemAfterIdle().isSaved)
+        }
+        assertEquals(listOf("Ankara"), saved.savedNames())
+    }
 }

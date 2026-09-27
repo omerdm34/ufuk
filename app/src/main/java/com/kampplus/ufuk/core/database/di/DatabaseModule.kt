@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.kampplus.ufuk.core.database.UfukDatabase
 import com.kampplus.ufuk.feature.forecast.data.local.dao.ForecastCacheDao
+import com.kampplus.ufuk.feature.places.data.local.dao.SavedPlaceDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,4 +22,7 @@ object DatabaseModule {
 
     @Provides
     fun provideForecastCacheDao(database: UfukDatabase): ForecastCacheDao = database.forecastCacheDao()
+
+    @Provides
+    fun provideSavedPlaceDao(database: UfukDatabase): SavedPlaceDao = database.savedPlaceDao()
 }

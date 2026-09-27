@@ -23,6 +23,7 @@ import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import com.kampplus.ufuk.R
+import com.kampplus.ufuk.core.ui.component.degreesText
 import com.kampplus.ufuk.core.ui.component.drawWeatherGlyph
 import com.kampplus.ufuk.core.ui.component.glyphColors
 import com.kampplus.ufuk.core.ui.text.UiText
@@ -101,7 +102,10 @@ fun HourlyChart(hours: List<HourlyUi>, modifier: Modifier = Modifier) {
                 drawWeatherGlyph(hour.glyph, hour.isDay, glyphColors, topLeft = Offset(cx - glyphSide / 2f, 22.dp.toPx()), side = glyphSide)
 
                 val point = Offset(cx, y(hour.temperature))
-                val temperature = textMeasurer.measure(hour.temperatureText, typography.labelLarge.copy(color = colors.onSurface))
+                val temperature = textMeasurer.measure(
+                    degreesText(hour.temperatureText),
+                    typography.labelLarge.copy(color = colors.onSurface)
+                )
                 drawText(temperature, topLeft = Offset(cx - temperature.size.width / 2f, point.y - temperature.size.height - 6.dp.toPx()))
                 if (hour.isNow) {
                     drawCircle(instruments.needle, radius = 4.5.dp.toPx(), center = point)
