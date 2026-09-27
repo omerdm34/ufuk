@@ -2,8 +2,8 @@ package com.kampplus.ufuk.core.common.di
 
 import com.kampplus.ufuk.core.common.dispatcher.DefaultDispatcher
 import com.kampplus.ufuk.core.common.dispatcher.IoDispatcher
-import com.kampplus.ufuk.core.common.error.DefaultErrorMapper
 import com.kampplus.ufuk.core.common.error.ErrorMapper
+import com.kampplus.ufuk.core.network.error.NetworkErrorMapper
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -17,7 +17,7 @@ import kotlinx.coroutines.Dispatchers
 @InstallIn(SingletonComponent::class)
 abstract class CommonModule {
     @Binds
-    abstract fun bindErrorMapper(impl: DefaultErrorMapper): ErrorMapper
+    abstract fun bindErrorMapper(impl: NetworkErrorMapper): ErrorMapper
 
     companion object {
         @Provides

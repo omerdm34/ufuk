@@ -1,0 +1,5 @@
+{
+  "latitude": 39.9,
+  "longitude": 32.8,
+  "current": { "time": "2026-09-27T14:00", "interval": 3600, "european_aqi": 38, "pm2_5": 11.2, "pm10": 19.8 }
+}
