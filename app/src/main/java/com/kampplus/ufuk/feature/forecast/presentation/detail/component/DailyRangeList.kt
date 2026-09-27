@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.kampplus.ufuk.core.ui.component.WeatherGlyph
+import com.kampplus.ufuk.core.ui.component.degreesText
 import com.kampplus.ufuk.core.ui.component.glyphColors
 import com.kampplus.ufuk.core.ui.theme.LocalInstrumentColors
 import com.kampplus.ufuk.feature.forecast.presentation.model.DailyRangeUi
@@ -73,7 +74,7 @@ private fun DayRow(day: DayUi, scaleMin: Float, scaleMax: Float, now: Float?) {
             modifier = Modifier.width(44.dp)
         )
         Text(
-            text = day.minText,
+            text = degreesText(day.minText),
             style = MaterialTheme.typography.headlineSmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.End,
@@ -97,7 +98,7 @@ private fun DayRow(day: DayUi, scaleMin: Float, scaleMax: Float, now: Float?) {
             }
         }
         Text(
-            text = day.maxText,
+            text = degreesText(day.maxText),
             style = MaterialTheme.typography.headlineSmall,
             textAlign = TextAlign.Start,
             modifier = Modifier.width(38.dp)

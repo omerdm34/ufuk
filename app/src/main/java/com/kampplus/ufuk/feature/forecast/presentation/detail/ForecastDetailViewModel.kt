@@ -18,6 +18,8 @@ import com.kampplus.ufuk.feature.forecast.domain.policy.FreshnessPolicy
 import com.kampplus.ufuk.feature.forecast.domain.usecase.ObserveForecastUseCase
 import com.kampplus.ufuk.feature.forecast.domain.usecase.RefreshForecastUseCase
 import com.kampplus.ufuk.feature.forecast.presentation.model.ForecastUiMapper
+import com.kampplus.ufuk.feature.places.domain.usecase.ObserveSavedPlaceIdsUseCase
+import com.kampplus.ufuk.feature.places.domain.usecase.ToggleSavedPlaceUseCase
 import com.kampplus.ufuk.feature.settings.domain.usecase.ObserveUnitSettingsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.time.Clock
@@ -44,6 +46,8 @@ class ForecastDetailViewModel @Inject constructor(
     observeUnitSettings: ObserveUnitSettingsUseCase,
     private val freshnessPolicy: FreshnessPolicy,
     private val uiMapper: ForecastUiMapper,
+    observeSavedPlaceIds: ObserveSavedPlaceIdsUseCase,
+    private val toggleSavedPlace: ToggleSavedPlaceUseCase,
     private val clock: Clock,
     ticker: Ticker
 ) : ViewModel() {
@@ -67,8 +71,9 @@ class ForecastDetailViewModel @Inject constructor(
         snapshots,
         observeUnitSettings(),
         refresh,
-        ticker.ticks()
-    ) { snapshot, units, status, now ->
+        ticker.ticks(),
+        observeSavedPlaceIds()
+    ) { snapshot, units, status, now, savedIds ->
         ForecastDetailUiState(
             title = uiMapper.placeTitle(place),
             content = when {
@@ -77,7 +82,9 @@ class ForecastDetailViewModel @Inject constructor(
                 else -> UiState.Loading
             },
             freshness = snapshot?.let { freshness(it, now, status.error) },
-            isRefreshing = status.inFlight && status.showIndicator && snapshot != null
+            isRefreshing = status.inFlight && status.showIndicator && snapshot != null,
+            // Cihaz konumu zaten "Yerlerim"in başında; yıldızla kaydedilmez.
+            isSaved = if (place.isDeviceLocation) null else place.id in savedIds
         )
     }.stateIn(
         scope = viewModelScope,
@@ -94,6 +101,10 @@ class ForecastDetailViewModel @Inject constructor(
 
     fun onRefresh() {
         viewModelScope.launch { refresh(showIndicator = true) }
+    }
+
+    fun onToggleSaved() {
+        viewModelScope.launch { toggleSavedPlace(place) }
     }
 
     fun onRetry() {

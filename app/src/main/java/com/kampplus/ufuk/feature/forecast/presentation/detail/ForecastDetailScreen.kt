@@ -44,6 +44,7 @@ import com.kampplus.ufuk.core.ui.component.FreshnessNote
 import com.kampplus.ufuk.core.ui.component.GlyphKind
 import com.kampplus.ufuk.core.ui.component.LoadingView
 import com.kampplus.ufuk.core.ui.component.SaveToggleButton
+import com.kampplus.ufuk.core.ui.component.degreesText
 import com.kampplus.ufuk.core.ui.state.UiState
 import com.kampplus.ufuk.core.ui.text.UiText
 import com.kampplus.ufuk.core.ui.theme.UfukTheme
@@ -227,7 +228,7 @@ private fun Readings(readings: List<ReadingUi>, modifier: Modifier = Modifier) {
                 verticalArrangement = Arrangement.spacedBy(2.dp)
             ) {
                 EngravedLabel(text = label)
-                Text(text = value, style = MaterialTheme.typography.headlineSmall)
+                Text(text = degreesText(value), style = MaterialTheme.typography.headlineSmall)
             }
         }
     }

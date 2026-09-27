@@ -11,27 +11,18 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.kampplus.ufuk.R
 import com.kampplus.ufuk.feature.forecast.presentation.model.ForecastUiModel
 
-/**
- * ViewModel'i ekrana bağlayan katman. Kaydetme düğmesi yerler özelliğine aittir; bu ekran onu
- * yalnızca durum ([isSaved]) ve olay ([onToggleSaved]) olarak alır, özellikler birbirini tanımaz.
- */
+/** ViewModel'i ekrana bağlayan katman. Ekranın kendisi ([ForecastDetailScreen]) stateless'tır. */
 @Composable
-fun ForecastDetailRoute(
-    onBack: () -> Unit,
-    modifier: Modifier = Modifier,
-    isSaved: Boolean? = null,
-    onToggleSaved: () -> Unit = {},
-    viewModel: ForecastDetailViewModel = hiltViewModel()
-) {
+fun ForecastDetailRoute(onBack: () -> Unit, modifier: Modifier = Modifier, viewModel: ForecastDetailViewModel = hiltViewModel()) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     ForecastDetailScreen(
-        uiState = uiState.copy(isSaved = isSaved),
+        uiState = uiState,
         onBack = onBack,
         onShare = { forecast -> context.shareForecast(forecast) },
         onRefresh = viewModel::onRefresh,
         onRetry = viewModel::onRetry,
-        onToggleSaved = onToggleSaved,
+        onToggleSaved = viewModel::onToggleSaved,
         modifier = modifier
     )
 }

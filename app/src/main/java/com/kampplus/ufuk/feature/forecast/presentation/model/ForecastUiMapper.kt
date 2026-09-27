@@ -344,7 +344,9 @@ class ForecastUiMapper @Inject constructor(
         const val HOURLY_COUNT = 24
         const val MINUTES_PER_HOUR = 60
         const val DAILY_COUNT = 10
-        const val RAIN_WINDOW_HOURS = 12
+
+        /** Özet kuralıyla aynı pencere: içinde bulunulan saat + sonraki 12 saat. */
+        const val RAIN_WINDOW_HOURS = InsightGenerator.LOOKAHEAD_HOURS + 1
         const val VISIBLE_PRECIPITATION = 20
         const val PRESSURE_TREND_HOURS = 3L
         const val PRESSURE_MIN = 960f
