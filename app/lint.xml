@@ -4,4 +4,6 @@
   <issue id="GradleDependency" severity="ignore" />
   <issue id="NewerVersionAvailable" severity="ignore" />
   <issue id="AndroidGradlePluginVersion" severity="ignore" />
+  <!-- targetSdk da taslakla aynı (36). Bu kural makinedeki en yeni SDK'ya göre değiştiği için CI ve yerel sonuç ayrışıyordu. -->
+  <issue id="OldTargetApi" severity="ignore" />
 </lint>
