@@ -3,6 +3,8 @@ package com.kampplus.ufuk.core.common.di
 import com.kampplus.ufuk.core.common.dispatcher.DefaultDispatcher
 import com.kampplus.ufuk.core.common.dispatcher.IoDispatcher
 import com.kampplus.ufuk.core.common.error.ErrorMapper
+import com.kampplus.ufuk.core.common.time.ClockTicker
+import com.kampplus.ufuk.core.common.time.Ticker
 import com.kampplus.ufuk.core.network.error.NetworkErrorMapper
 import dagger.Binds
 import dagger.Module
@@ -18,6 +20,9 @@ import kotlinx.coroutines.Dispatchers
 abstract class CommonModule {
     @Binds
     abstract fun bindErrorMapper(impl: NetworkErrorMapper): ErrorMapper
+
+    @Binds
+    abstract fun bindTicker(impl: ClockTicker): Ticker
 
     companion object {
         @Provides
