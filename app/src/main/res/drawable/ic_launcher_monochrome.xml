@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Temalı ikon (Android 13+): tek renk; sistem kendi rengiyle boyar. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="108dp"
+  android:height="108dp"
+  android:viewportWidth="108"
+  android:viewportHeight="108">
+  <path
+    android:fillColor="#00000000"
+    android:pathData="M38.444,69.556A22,22 0,1 1,69.556 69.556"
+    android:strokeWidth="3"
+    android:strokeColor="#FFFFFFFF"
+    android:strokeLineCap="round" />
+  <path
+    android:fillColor="#FFFFFFFF"
+    android:pathData="M66,33.215L55.905,55.1L52.095,52.9Z" />
+  <path
+    android:fillColor="#FFFFFFFF"
+    android:pathData="M54,54m-3.4,0a3.4,3.4 0,1 1,6.8 0a3.4,3.4 0,1 1,-6.8 0" />
+</vector>
