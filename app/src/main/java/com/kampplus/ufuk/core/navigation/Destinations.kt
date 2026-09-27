@@ -4,6 +4,16 @@ import com.kampplus.ufuk.core.model.Coordinates
 import com.kampplus.ufuk.core.model.Place
 import kotlinx.serialization.Serializable
 
+/** Type-safe navigasyon hedefleri. Argümanlar derleme zamanında denetlenir. */
+@Serializable
+data object MyPlacesDestination
+
+@Serializable
+data object ExploreDestination
+
+@Serializable
+data object SettingsDestination
+
 /**
  * Tahmin ekranı. Yerin tamamı argüman olarak taşınır; böylece detay ekranı ek bir
  * "yeri getir" isteğine ihtiyaç duymaz ve cihaz konumu da aynı yoldan açılır.
