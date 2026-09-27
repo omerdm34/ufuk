@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Siyah lake kadran (tema: Lacquer1 / Silver0). Compose çizmeden önceki pencere rengi. -->
+  <color name="ic_launcher_background">#14171B</color>
+  <color name="window_background">#E6E9EB</color>
+</resources>

@@ -18,7 +18,7 @@ android {
         minSdk = 26
         targetSdk = 36
         versionCode = 1
-        versionName = "0.1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -61,6 +61,15 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+    }
+    sourceSets {
+        // MigrationTestHelper eski şemaları buradan okur.
+        getByName("androidTest").assets.srcDir("$projectDir/schemas")
+    }
+    lint {
+        lintConfig = file("lint.xml")
+        warningsAsErrors = true
+        abortOnError = true
     }
     androidResources {
         // Uygulama Türkçe ve İngilizce yayımlanır; kütüphanelerin diğer dilleri APK'ya girmez.

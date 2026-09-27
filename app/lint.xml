@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+  <!-- Bağımlılık sürümleri bilerek kamp referans uygulamasıyla (Hava) aynı tutulur; yükseltme ayrı bir iş. -->
+  <issue id="GradleDependency" severity="ignore" />
+  <issue id="NewerVersionAvailable" severity="ignore" />
+  <issue id="AndroidGradlePluginVersion" severity="ignore" />
+</lint>

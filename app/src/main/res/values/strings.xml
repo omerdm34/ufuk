@@ -1,3 +1,193 @@
 <resources>
-    <string name="app_name">Ufuk</string>
+    <string name="app_name" translatable="false">Ufuk</string>
+
+    <!-- Genel durumlar -->
+    <string name="state_loading">Ölçülüyor</string>
+    <string name="state_error_title">Veri alınamadı</string>
+    <string name="action_retry">Tekrar dene</string>
+    <string name="action_save_place">Yerlerime ekle</string>
+    <string name="action_remove_place">Yerlerimden çıkar</string>
+
+    <!-- Hatalar: sorunu ve çözümü söyler -->
+    <string name="error_generic">Beklenmeyen bir sorun oldu. Biraz sonra tekrar dene.</string>
+    <string name="error_network">İnternete ulaşılamıyor. Bağlantını kontrol edip tekrar dene.</string>
+    <string name="error_not_found">Bu yer için veri bulunamadı.</string>
+    <string name="error_parse">Hava servisi beklenmeyen bir yanıt verdi. Biraz sonra tekrar dene.</string>
+    <string name="error_server">Hava servisi şu an yanıt vermiyor (HTTP %1$d). Biraz sonra tekrar dene.</string>
+    <string name="error_location_unavailable">Konumun bulunamadı. Konum servisinin açık olduğundan emin ol ya da açık alanda tekrar dene.</string>
+    <string name="error_location_permission">Konum izni verilmedi. İstersen şehir arayarak devam edebilirsin.</string>
+
+    <!-- Birimler -->
+    <string name="unit_celsius" translatable="false">°C</string>
+    <string name="unit_fahrenheit" translatable="false">°F</string>
+    <string name="unit_kmh">km⁠/⁠sa</string>
+    <string name="unit_ms">m⁠/⁠sn</string>
+    <string name="unit_mph" translatable="false">mph</string>
+    <string name="format_value_unit" translatable="false">%1$d %2$s</string>
+
+    <!-- Ayarlar -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_units">Birimler</string>
+    <string name="settings_temperature">Sıcaklık</string>
+    <string name="settings_wind">Rüzgâr hızı</string>
+    <string name="settings_about">Hakkında</string>
+    <string name="settings_data_source">Hava verileri: Open-Meteo</string>
+    <string name="settings_data_source_detail">Tahmin, arama ve hava kalitesi verisi open-meteo.com’dan, CC BY 4.0 lisansıyla.</string>
+    <string name="settings_font">Yazı tipi: Barlow Condensed</string>
+    <string name="settings_font_detail">Jeremy Tribby, SIL Open Font License 1.1</string>
+    <string name="settings_version">Sürüm %1$s · Kamp+ Turkcell Akademi</string>
+
+    <!-- Hava koşulları -->
+    <string name="condition_clear">Açık</string>
+    <string name="condition_mainly_clear">Az bulutlu</string>
+    <string name="condition_partly_cloudy">Parçalı bulutlu</string>
+    <string name="condition_overcast">Kapalı</string>
+    <string name="condition_fog">Sisli</string>
+    <string name="condition_drizzle">Çisenti</string>
+    <string name="condition_freezing_rain">Dondurucu yağmur</string>
+    <string name="condition_rain">Yağmurlu</string>
+    <string name="condition_snow">Karlı</string>
+    <string name="condition_rain_showers">Sağanak</string>
+    <string name="condition_snow_showers">Kar sağanağı</string>
+    <string name="condition_thunderstorm">Gök gürültülü fırtına</string>
+    <string name="condition_unknown">Bilinmiyor</string>
+
+    <!-- Tahmin detayı -->
+    <string name="my_location">Konumum</string>
+    <string name="action_back">Geri</string>
+    <string name="action_share">Paylaş</string>
+    <string name="detail_high_low">En yüksek %1$s · En düşük %2$s</string>
+    <string name="detail_yesterday_legend">Dün bu saatte %1$s</string>
+    <string name="detail_now_legend">Şimdi</string>
+    <string name="percent_value">%%%1$d</string>
+    <string name="reading_feels">Hissedilen</string>
+    <string name="reading_rain">Yağış olasılığı</string>
+    <string name="reading_wind">Rüzgâr</string>
+    <string name="section_hourly">Saatlik</string>
+    <string name="section_daily">10 günlük</string>
+    <string name="section_instruments">Aletler</string>
+    <string name="hour_now">Şimdi</string>
+    <string name="day_today">Bugün</string>
+    <string name="day_tomorrow">Yarın</string>
+    <string name="attribution">Hava verileri: Open-Meteo.com · CC BY 4.0</string>
+    <string name="share_text">%1$s şu an %2$s, %3$s. Bugün %4$s ile %5$s arası. %6$s (Ufuk)</string>
+
+    <!-- Özet cümleleri -->
+    <string name="insight_rain_starting">Saat %1$s civarı yağmur başlıyor (olasılık %2$s).</string>
+    <string name="insight_snow_starting">Saat %1$s civarı kar başlıyor (olasılık %2$s).</string>
+    <string name="insight_precipitation_easing">Yağışın saat %1$s civarı dinmesi bekleniyor.</string>
+    <string name="insight_strong_wind">Rüzgâr sert; hamleler %1$s hızına ulaşıyor.</string>
+    <string name="insight_frost">Don riski: saat %1$s civarı sıcaklık %2$s.</string>
+    <string name="insight_high_uv">UV %1$s ile %2$s arası yüksek (en çok %3$d). Güneşte korun.</string>
+    <string name="insight_feels_colder">Hissedilen %1$s; ölçülenden daha serin.</string>
+    <string name="insight_feels_warmer">Hissedilen %1$s; ölçülenden daha sıcak.</string>
+    <string name="insight_warmer_than_yesterday">Dün bu saatten %1$d° daha sıcak.</string>
+    <string name="insight_colder_than_yesterday">Dün bu saatten %1$d° daha serin.</string>
+    <string name="insight_tomorrow_warmer">Yarın bugünden %1$d° daha sıcak olacak.</string>
+    <string name="insight_tomorrow_colder">Yarın bugünden %1$d° daha serin olacak.</string>
+    <string name="insight_steady">Önümüzdeki saatlerde belirgin bir değişiklik beklenmiyor.</string>
+
+    <!-- Aletler -->
+    <string name="instrument_wind">Rüzgâr</string>
+    <string name="wind_note">%1$s · hamle %2$s</string>
+    <string name="wind_note_gust">Hamle %1$s</string>
+    <string name="wind_from_north">Kuzeyden</string>
+    <string name="wind_from_north_east">Kuzeydoğudan</string>
+    <string name="wind_from_east">Doğudan</string>
+    <string name="wind_from_south_east">Güneydoğudan</string>
+    <string name="wind_from_south">Güneyden</string>
+    <string name="wind_from_south_west">Güneybatıdan</string>
+    <string name="wind_from_west">Batıdan</string>
+    <string name="wind_from_north_west">Kuzeybatıdan</string>
+    <string name="compass_n">K</string>
+    <string name="compass_e">D</string>
+    <string name="compass_s">G</string>
+    <string name="compass_w">B</string>
+    <string name="instrument_humidity">Nem</string>
+    <string name="humidity_note">Çiy noktası %1$s</string>
+    <string name="instrument_pressure">Basınç</string>
+    <string name="pressure_value" translatable="false">%1$d hPa</string>
+    <string name="pressure_rising">Son 3 saatte yükseliyor</string>
+    <string name="pressure_steady">Son 3 saatte sabit</string>
+    <string name="pressure_falling">Son 3 saatte düşüyor</string>
+    <string name="instrument_uv">UV indeksi</string>
+    <string name="uv_note">%1$s · bugün en çok %2$d</string>
+    <string name="uv_low">Düşük</string>
+    <string name="uv_moderate">Orta</string>
+    <string name="uv_high">Yüksek</string>
+    <string name="uv_very_high">Çok yüksek</string>
+    <string name="uv_extreme">Aşırı</string>
+    <string name="instrument_sun">Güneş</string>
+    <string name="sun_rises">Doğuş %1$s</string>
+    <string name="sun_sets">Batış %1$s</string>
+    <string name="sun_set_at">Battı %1$s</string>
+    <string name="sun_daylight">Gün ışığı %1$d sa %2$d dk</string>
+    <string name="instrument_air">Hava kalitesi</string>
+    <string name="air_note">%1$s · PM2,5 %2$d µg/m³</string>
+    <string name="aqi_good">İyi</string>
+    <string name="aqi_fair">Makul</string>
+    <string name="aqi_moderate">Orta</string>
+    <string name="aqi_poor">Kötü</string>
+    <string name="aqi_very_poor">Çok kötü</string>
+    <string name="aqi_extremely_poor">Son derece kötü</string>
+
+    <!-- Tazelik -->
+    <plurals name="age_minutes">
+        <item quantity="one">%d dk</item>
+        <item quantity="other">%d dk</item>
+    </plurals>
+    <plurals name="age_hours">
+        <item quantity="one">%d sa</item>
+        <item quantity="other">%d sa</item>
+    </plurals>
+    <string name="freshness_just_now">Az önce güncellendi</string>
+    <string name="freshness_updated">%1$s önce güncellendi</string>
+    <string name="freshness_stale">%1$s önceki veri</string>
+    <string name="freshness_failed">Güncellenemedi · %1$s önceki veri</string>
+
+    <!-- Erişilebilirlik -->
+    <string name="a11y_dial_now">Şu an %1$s, %2$s.</string>
+    <string name="a11y_dial">Şu an %1$s, %2$s. Bugün en düşük %3$s, en yüksek %4$s.</string>
+    <string name="a11y_dial_yesterday">Şu an %1$s, %2$s. Bugün en düşük %3$s, en yüksek %4$s. Dün bu saatte %5$s.</string>
+    <string name="a11y_day">%1$s: %2$s, en düşük %3$s, en yüksek %4$s.</string>
+    <string name="a11y_day_precipitation">%1$s: %2$s, en düşük %3$s, en yüksek %4$s, yağış olasılığı %5$s.</string>
+    <string name="a11y_hour">%1$s: %2$s</string>
+    <string name="a11y_hour_precipitation">%1$s: %2$s, yağış %3$s</string>
+    <string name="a11y_row">%1$s, %2$s, %3$s</string>
+    <string name="a11y_row_range">%1$s, %2$s, %3$s. Bugün en yüksek ve en düşük: %4$s</string>
+    <string name="a11y_row_no_data">%1$s, hava verisi yok</string>
+
+    <!-- Gezinme -->
+    <string name="nav_my_places">Yerlerim</string>
+    <string name="nav_explore">Keşfet</string>
+    <string name="nav_settings">Ayarlar</string>
+
+    <!-- Yerlerim -->
+    <string name="my_places_title">Yerlerim</string>
+    <string name="location_prompt_title">Bulunduğun yerin havası</string>
+    <string name="location_prompt_message">Konumun yalnızca tahmin almak için kullanılır ve yalnızca bu cihazda saklanır.</string>
+    <string name="action_use_location">Konumumu kullan</string>
+    <string name="action_update_location">Konumu güncelle</string>
+    <string name="locating">Konum bulunuyor…</string>
+    <string name="my_places_empty_title">Henüz kayıtlı yerin yok</string>
+    <string name="my_places_empty_message">Keşfet’te bir şehrin yanındaki yıldıza dokun; her sabah ilk bakacağın yer burası olsun.</string>
+    <string name="action_go_explore">Keşfet’e git</string>
+    <string name="place_removed">%1$s yerlerinden çıkarıldı</string>
+    <string name="action_undo">Geri al</string>
+    <string name="notice_offline_rows">Çevrimdışı · son bilinen değerler gösteriliyor</string>
+    <string name="row_detail">%1$s · yerel saat %2$s</string>
+    <string name="row_no_data">Hava verisi alınamadı</string>
+    <string name="row_range" translatable="false">%1$s / %2$s</string>
+
+    <!-- Keşfet -->
+    <string name="explore_title">Keşfet</string>
+    <string name="search_hint">Şehir ara (ör. Rize, Berlin)</string>
+    <string name="action_clear">Temizle</string>
+    <string name="explore_now_title">Türkiye şu an</string>
+    <string name="explore_extremes">En sıcak %1$s %2$s · En serin %3$s %4$s</string>
+    <string name="sort_alphabetical" translatable="false">A–Z</string>
+    <string name="sort_warmest">En sıcak</string>
+    <string name="sort_coldest">En serin</string>
+    <string name="search_empty_title">Yer bulunamadı</string>
+    <string name="search_empty_message">“%1$s” için bir yerleşim yeri bulunamadı. Yazımı kontrol et ya da yakındaki büyük bir yeri dene.</string>
 </resources>
