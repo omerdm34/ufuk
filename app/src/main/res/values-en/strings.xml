@@ -1,0 +1,185 @@
+<resources>
+    <!-- General states -->
+    <string name="state_loading">Measuring</string>
+    <string name="state_error_title">Couldn’t get the data</string>
+    <string name="action_retry">Try again</string>
+    <string name="action_save_place">Add to my places</string>
+    <string name="action_remove_place">Remove from my places</string>
+
+    <!-- Errors: name the problem and the way out -->
+    <string name="error_generic">Something unexpected happened. Try again in a moment.</string>
+    <string name="error_network">Can’t reach the internet. Check your connection and try again.</string>
+    <string name="error_not_found">No data found for this place.</string>
+    <string name="error_parse">The weather service sent an unexpected response. Try again in a moment.</string>
+    <string name="error_server">The weather service isn’t responding (HTTP %1$d). Try again in a moment.</string>
+    <string name="error_location_unavailable">Couldn’t find your location. Make sure location is on, or try again outdoors.</string>
+    <string name="error_location_permission">Location permission wasn’t granted. You can still search for a city.</string>
+
+    <!-- Units -->
+    <string name="unit_kmh">km⁠/⁠h</string>
+    <string name="unit_ms">m⁠/⁠s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_units">Units</string>
+    <string name="settings_temperature">Temperature</string>
+    <string name="settings_wind">Wind speed</string>
+    <string name="settings_about">About</string>
+    <string name="settings_data_source">Weather data: Open-Meteo</string>
+    <string name="settings_data_source_detail">Forecast, search and air quality from open-meteo.com, licensed CC BY 4.0.</string>
+    <string name="settings_font">Typeface: Barlow Condensed</string>
+    <string name="settings_font_detail">Jeremy Tribby, SIL Open Font License 1.1</string>
+    <string name="settings_version">Version %1$s · Kamp+ Turkcell Academy</string>
+
+    <!-- Conditions -->
+    <string name="condition_clear">Clear</string>
+    <string name="condition_mainly_clear">Mostly clear</string>
+    <string name="condition_partly_cloudy">Partly cloudy</string>
+    <string name="condition_overcast">Overcast</string>
+    <string name="condition_fog">Fog</string>
+    <string name="condition_drizzle">Drizzle</string>
+    <string name="condition_freezing_rain">Freezing rain</string>
+    <string name="condition_rain">Rain</string>
+    <string name="condition_snow">Snow</string>
+    <string name="condition_rain_showers">Showers</string>
+    <string name="condition_snow_showers">Snow showers</string>
+    <string name="condition_thunderstorm">Thunderstorm</string>
+    <string name="condition_unknown">Unknown</string>
+
+    <!-- Forecast detail -->
+    <string name="my_location">My location</string>
+    <string name="detail_title">Forecast</string>
+    <string name="action_back">Back</string>
+    <string name="action_share">Share</string>
+    <string name="detail_high_low">High %1$s · Low %2$s</string>
+    <string name="detail_yesterday_legend">Yesterday at this hour %1$s</string>
+    <string name="detail_now_legend">Now</string>
+    <string name="percent_value">%1$d%%</string>
+    <string name="reading_feels">Feels like</string>
+    <string name="reading_rain">Chance of rain</string>
+    <string name="reading_wind">Wind</string>
+    <string name="section_hourly">Hourly</string>
+    <string name="section_daily">10 days</string>
+    <string name="section_instruments">Instruments</string>
+    <string name="hour_now">Now</string>
+    <string name="day_today">Today</string>
+    <string name="day_tomorrow">Tomorrow</string>
+    <string name="attribution">Weather data: Open-Meteo.com · CC BY 4.0</string>
+    <string name="share_text">%1$s is %2$s and %3$s right now. Today between %4$s and %5$s. %6$s (Ufuk)</string>
+
+    <!-- Summaries -->
+    <string name="insight_rain_starting">Rain likely from around %1$s (%2$s chance).</string>
+    <string name="insight_snow_starting">Snow likely from around %1$s (%2$s chance).</string>
+    <string name="insight_precipitation_easing">Rain should ease around %1$s.</string>
+    <string name="insight_strong_wind">Strong wind; gusts reach %1$s.</string>
+    <string name="insight_frost">Frost risk: %2$s around %1$s.</string>
+    <string name="insight_high_uv">High UV between %1$s and %2$s (peak %3$d). Cover up in the sun.</string>
+    <string name="insight_feels_colder">Feels like %1$s; colder than measured.</string>
+    <string name="insight_feels_warmer">Feels like %1$s; warmer than measured.</string>
+    <string name="insight_warmer_than_yesterday">%1$d° warmer than this time yesterday.</string>
+    <string name="insight_colder_than_yesterday">%1$d° cooler than this time yesterday.</string>
+    <string name="insight_tomorrow_warmer">Tomorrow will be %1$d° warmer than today.</string>
+    <string name="insight_tomorrow_colder">Tomorrow will be %1$d° cooler than today.</string>
+    <string name="insight_steady">No notable change expected in the coming hours.</string>
+
+    <!-- Instruments -->
+    <string name="instrument_wind">Wind</string>
+    <string name="wind_note">%1$s · gusts %2$s</string>
+    <string name="wind_note_gust">Gusts %1$s</string>
+    <string name="wind_from_north">From the north</string>
+    <string name="wind_from_north_east">From the northeast</string>
+    <string name="wind_from_east">From the east</string>
+    <string name="wind_from_south_east">From the southeast</string>
+    <string name="wind_from_south">From the south</string>
+    <string name="wind_from_south_west">From the southwest</string>
+    <string name="wind_from_west">From the west</string>
+    <string name="wind_from_north_west">From the northwest</string>
+    <string name="compass_n">N</string>
+    <string name="compass_e">E</string>
+    <string name="compass_s">S</string>
+    <string name="compass_w">W</string>
+    <string name="instrument_humidity">Humidity</string>
+    <string name="humidity_note">Dew point %1$s</string>
+    <string name="instrument_pressure">Pressure</string>
+    <string name="pressure_rising">Rising over 3 hours</string>
+    <string name="pressure_steady">Steady over 3 hours</string>
+    <string name="pressure_falling">Falling over 3 hours</string>
+    <string name="instrument_uv">UV index</string>
+    <string name="uv_note">%1$s · today’s peak %2$d</string>
+    <string name="uv_low">Low</string>
+    <string name="uv_moderate">Moderate</string>
+    <string name="uv_high">High</string>
+    <string name="uv_very_high">Very high</string>
+    <string name="uv_extreme">Extreme</string>
+    <string name="instrument_sun">Sun</string>
+    <string name="sun_rises">Sunrise %1$s</string>
+    <string name="sun_sets">Sunset %1$s</string>
+    <string name="sun_set_at">Set at %1$s</string>
+    <string name="sun_daylight">Daylight %1$d h %2$d min</string>
+    <string name="instrument_air">Air quality</string>
+    <string name="air_note">%1$s · PM2.5 %2$d µg/m³</string>
+    <string name="aqi_good">Good</string>
+    <string name="aqi_fair">Fair</string>
+    <string name="aqi_moderate">Moderate</string>
+    <string name="aqi_poor">Poor</string>
+    <string name="aqi_very_poor">Very poor</string>
+    <string name="aqi_extremely_poor">Extremely poor</string>
+
+    <!-- Freshness -->
+    <plurals name="age_minutes">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d min</item>
+    </plurals>
+    <plurals name="age_hours">
+        <item quantity="one">%d h</item>
+        <item quantity="other">%d h</item>
+    </plurals>
+    <string name="freshness_just_now">Updated just now</string>
+    <string name="freshness_updated">Updated %1$s ago</string>
+    <string name="freshness_stale">Data from %1$s ago</string>
+    <string name="freshness_failed">Couldn’t update · data from %1$s ago</string>
+
+    <!-- Accessibility -->
+    <string name="a11y_dial_now">Now %1$s, %2$s.</string>
+    <string name="a11y_dial">Now %1$s, %2$s. Today low %3$s, high %4$s.</string>
+    <string name="a11y_dial_yesterday">Now %1$s, %2$s. Today low %3$s, high %4$s. Yesterday at this hour %5$s.</string>
+    <string name="a11y_day">%1$s: %2$s, low %3$s, high %4$s.</string>
+    <string name="a11y_day_precipitation">%1$s: %2$s, low %3$s, high %4$s, chance of rain %5$s.</string>
+    <string name="a11y_hour">%1$s: %2$s</string>
+    <string name="a11y_hour_precipitation">%1$s: %2$s, rain %3$s</string>
+    <string name="a11y_row">%1$s, %2$s, %3$s</string>
+    <string name="a11y_row_range">%1$s, %2$s, %3$s. Today’s high and low: %4$s</string>
+    <string name="a11y_row_no_data">%1$s, no weather data</string>
+
+    <!-- Navigation -->
+    <string name="nav_my_places">My places</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- My places -->
+    <string name="my_places_title">My places</string>
+    <string name="location_prompt_title">Weather where you are</string>
+    <string name="location_prompt_message">Your location is only used to get the forecast and is stored only on this device.</string>
+    <string name="action_use_location">Use my location</string>
+    <string name="action_update_location">Update location</string>
+    <string name="locating">Finding your location…</string>
+    <string name="my_places_empty_title">No saved places yet</string>
+    <string name="my_places_empty_message">Tap the star next to a city in Explore; it will be the first thing you check every morning.</string>
+    <string name="action_go_explore">Go to Explore</string>
+    <string name="place_removed">%1$s removed from your places</string>
+    <string name="action_undo">Undo</string>
+    <string name="notice_offline_rows">Offline · showing last known values</string>
+    <string name="row_detail">%1$s · local time %2$s</string>
+    <string name="row_no_data">Couldn’t get weather data</string>
+
+    <!-- Explore -->
+    <string name="explore_title">Explore</string>
+    <string name="search_hint">Search a city (e.g. Rize, Berlin)</string>
+    <string name="action_clear">Clear</string>
+    <string name="explore_now_title">Türkiye right now</string>
+    <string name="explore_extremes">Warmest %1$s %2$s · Coolest %3$s %4$s</string>
+    <string name="sort_warmest">Warmest</string>
+    <string name="sort_coldest">Coolest</string>
+    <string name="search_empty_title">No places found</string>
+    <string name="search_empty_message">No town or city matches “%1$s”. Check the spelling or try a larger place nearby.</string>
+</resources>
