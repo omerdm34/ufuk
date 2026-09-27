@@ -1,0 +1,9 @@
+{
+  "results": [
+    { "id": 323786, "name": "Ankara", "latitude": 39.91987, "longitude": 32.85427, "feature_code": "PPLC", "country": "Türkiye", "admin1": "Ankara" },
+    { "id": 6299722, "name": "Esenboğa Havalimanı", "latitude": 40.12806, "longitude": 32.99506, "feature_code": "AIRP", "country": "Türkiye", "admin1": "Ankara" },
+    { "id": 9001001, "name": "Ankara Çayı Köyü", "latitude": 39.95, "longitude": 32.51, "feature_code": "PPL", "country": "Türkiye", "admin1": "Ankara" },
+    { "id": 9001002, "name": "Ankara Tepesi", "latitude": 39.10, "longitude": 33.20, "feature_code": "MT", "country": "Türkiye", "admin1": "Kırşehir" }
+  ],
+  "generationtime_ms": 0.9
+}
