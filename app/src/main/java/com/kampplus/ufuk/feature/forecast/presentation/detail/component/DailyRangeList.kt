@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -78,7 +79,9 @@ private fun DayRow(day: DayUi, scaleMin: Float, scaleMax: Float, now: Float?) {
             style = MaterialTheme.typography.headlineSmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.End,
-            modifier = Modifier.width(38.dp)
+            maxLines = 1,
+            softWrap = false,
+            modifier = Modifier.widthIn(min = TEMPERATURE_WIDTH)
         )
         Canvas(
             modifier = Modifier
@@ -101,7 +104,12 @@ private fun DayRow(day: DayUi, scaleMin: Float, scaleMax: Float, now: Float?) {
             text = degreesText(day.maxText),
             style = MaterialTheme.typography.headlineSmall,
             textAlign = TextAlign.Start,
-            modifier = Modifier.width(38.dp)
+            maxLines = 1,
+            softWrap = false,
+            modifier = Modifier.widthIn(min = TEMPERATURE_WIDTH)
         )
     }
 }
+
+/** "-12°" gibi iki basamaklı eksi değerlere yeter; büyük yazı boyutunda sütun kesilmek yerine genişler. */
+private val TEMPERATURE_WIDTH = 44.dp
