@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Ufuk</string>
+
+    <!-- Genel durumlar -->
+    <string name="state_loading">Ölçülüyor</string>
+    <string name="state_error_title">Veri alınamadı</string>
+    <string name="action_retry">Tekrar dene</string>
+    <string name="action_save_place">Yerlerime ekle</string>
+    <string name="action_remove_place">Yerlerimden çıkar</string>
+
+    <!-- Hatalar: sorunu ve çözümü söyler -->
+    <string name="error_generic">Beklenmeyen bir sorun oldu. Biraz sonra tekrar dene.</string>
+    <string name="error_network">İnternete ulaşılamıyor. Bağlantını kontrol edip tekrar dene.</string>
+    <string name="error_not_found">Bu yer için veri bulunamadı.</string>
+    <string name="error_parse">Hava servisi beklenmeyen bir yanıt verdi. Biraz sonra tekrar dene.</string>
+    <string name="error_server">Hava servisi şu an yanıt vermiyor (HTTP %1$d). Biraz sonra tekrar dene.</string>
+    <string name="error_location_unavailable">Konumun bulunamadı. Konum servisinin açık olduğundan emin ol ya da açık alanda tekrar dene.</string>
+    <string name="error_location_permission">Konum izni verilmedi. İstersen şehir arayarak devam edebilirsin.</string>
 </resources>
