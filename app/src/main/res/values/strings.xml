@@ -16,4 +16,23 @@
     <string name="error_server">Hava servisi şu an yanıt vermiyor (HTTP %1$d). Biraz sonra tekrar dene.</string>
     <string name="error_location_unavailable">Konumun bulunamadı. Konum servisinin açık olduğundan emin ol ya da açık alanda tekrar dene.</string>
     <string name="error_location_permission">Konum izni verilmedi. İstersen şehir arayarak devam edebilirsin.</string>
+    <!-- Birimler -->
+    <string name="unit_celsius">°C</string>
+    <string name="unit_fahrenheit">°F</string>
+    <string name="unit_kmh">km/sa</string>
+    <string name="unit_ms">m/sn</string>
+    <string name="unit_mph">mph</string>
+    <string name="format_value_unit">%1$d %2$s</string>
+
+    <!-- Ayarlar -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_units">Birimler</string>
+    <string name="settings_temperature">Sıcaklık</string>
+    <string name="settings_wind">Rüzgâr hızı</string>
+    <string name="settings_about">Hakkında</string>
+    <string name="settings_data_source">Hava verileri: Open-Meteo</string>
+    <string name="settings_data_source_detail">Tahmin, arama ve hava kalitesi verisi open-meteo.com’dan, CC BY 4.0 lisansıyla.</string>
+    <string name="settings_font">Yazı tipi: Barlow Condensed</string>
+    <string name="settings_font_detail">Jeremy Tribby, SIL Open Font License 1.1</string>
+    <string name="settings_version">Sürüm %1$s · Kamp+ Turkcell Akademi</string>
 </resources>
