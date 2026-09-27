@@ -54,7 +54,6 @@
 
     <!-- Tahmin detayı -->
     <string name="my_location">Konumum</string>
-    <string name="detail_title">Tahmin</string>
     <string name="action_back">Geri</string>
     <string name="action_share">Paylaş</string>
     <string name="detail_high_low">En yüksek %1$s · En düşük %2$s</string>

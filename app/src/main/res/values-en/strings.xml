@@ -48,7 +48,6 @@
 
     <!-- Forecast detail -->
     <string name="my_location">My location</string>
-    <string name="detail_title">Forecast</string>
     <string name="action_back">Back</string>
     <string name="action_share">Share</string>
     <string name="detail_high_low">High %1$s · Low %2$s</string>

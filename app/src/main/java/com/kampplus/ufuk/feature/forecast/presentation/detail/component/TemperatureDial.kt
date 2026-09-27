@@ -152,7 +152,8 @@ fun TemperatureDial(
                     angle = needleAngle.value,
                     color = instruments.needle.copy(alpha = if (isStale) STALE_ALPHA else 1f),
                     width = 5.dp.toPx(),
-                    hubColor = instruments.face
+                    hubColor = instruments.face,
+                    tail = radius * 0.08f
                 )
             }
         }
